@@ -1,17 +1,17 @@
 {
   "$schema": "../node_modules/@alfresco/adf-core/app.config.schema.json",
-  "bpmHost": "http://localhost:8080",
+  "bpmHost": "http://your-server-ip:8080",
   "providers": "BPM",
   "authType": "OAUTH",
-  "identityHost": "http://localhost:8180/realms/my-alfresco",
+  "identityHost": "http://your-server-ip:8180/realms/my-alfresco",
   "oauth2": {
-    "host": "http://localhost:8180/realms/my-alfresco",
+    "host": "http://your-server-ip:8180/realms/my-alfresco",
     "clientId": "my-alfresco",
     "scope": "openid",
     "secret": "",
     "implicitFlow": true,
     "silentLogin": true,
-    "redirectSilentIframeUri": "http://localhost:8080/assets/silent-refresh.html",
+    "redirectSilentIframeUri": "http://your-server-ip:8080/assets/silent-refresh.html",
     "redirectUri": "/",
     "redirectUriLogout": "/logout",
     "requireHttps": "false"
