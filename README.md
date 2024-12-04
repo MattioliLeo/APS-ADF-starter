@@ -4,6 +4,8 @@ Minimal ready-to-use Angular CLI project template pre-configured with ADF compon
 
 ## Quick start
 
+Search for "your-server-ip" in the various configuration files and put your server ip
+
 ```sh
 npm install
 npm start
@@ -26,10 +28,6 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 The template provides certain proxy settings to allow running web application locally without CORS setup.
 You can find details in the `proxy.conf.js` file.
-
-List of URLs being proxied:
-
-- `/activiti-app` -> `http://0.0.0.0:9999`
 
 ## Code scaffolding
 
