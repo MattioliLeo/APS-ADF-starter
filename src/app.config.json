@@ -1,24 +1,70 @@
 {
   "$schema": "../node_modules/@alfresco/adf-core/app.config.schema.json",
-  "ecmHost": "{protocol}//{hostname}{:port}",
-  "providers": "ECM",
-  "authType": "BASIC",
-  "identityHost": "{protocol}//{hostname}{:port}/auth/realms/alfresco",
+  "bpmHost": "http://localhost:8080",
+  "providers": "BPM",
+  "authType": "OAUTH",
+  "identityHost": "http://localhost:8180/realms/my-alfresco",
   "oauth2": {
-    "host": "{protocol}//{hostname}{:port}/auth/realms/alfresco",
-    "clientId": "alfresco",
+    "host": "http://localhost:8180/realms/my-alfresco",
+    "clientId": "my-alfresco",
     "scope": "openid",
     "secret": "",
     "implicitFlow": true,
     "silentLogin": true,
-    "redirectSilentIframeUri": "{protocol}//{hostname}{:port}/assets/silent-refresh.html",
+    "redirectSilentIframeUri": "http://localhost:8080/assets/silent-refresh.html",
     "redirectUri": "/",
     "redirectUriLogout": "/logout",
-    "skipIssuerCheck": true,
-    "strictDiscoveryDocumentValidation": false
+    "requireHttps": "false"
   },
+  "application": {
+    "name": "Alfresco ADF Application"
+  },
+  "alfresco-deployed-apps": [{"name":"simple-app"}],
   "languages": [
-    { "key": "en", "label": "English" },
-    { "key": "es", "label": "Español" }
-  ]
+    {
+      "key": "en",
+      "label": "English"
+    },
+    {
+      "key": "fr",
+      "label": "French"
+    },
+    {
+      "key": "de",
+      "label": "German"
+    },
+    {
+      "key": "it",
+      "label": "Italian"
+    },
+    {
+      "key": "es",
+      "label": "Spanish"
+    },
+    {
+      "key": "ja",
+      "label": "Japanese"
+    },
+    {
+      "key": "nl",
+      "label": "Dutch"
+    },
+    {
+      "key": "pt-BR",
+      "label": "Brazilian Portuguese"
+    },
+    {
+      "key": "nb",
+      "label": "Norwegian"
+    },
+    {
+      "key": "ru",
+      "label": "Russian"
+    },
+    {
+      "key": "zh-CN",
+      "label": "Simplified Chinese"
+    }
+  ],
+  "logLevel": "trace"
 }

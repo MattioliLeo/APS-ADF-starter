@@ -1,16 +1,12 @@
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { AppComponent } from './app.component';
-import {
-  CoreModule,
-  TranslateLoaderService,
-  AlfrescoApiService,
-  AlfrescoApiServiceMock,
-  AppConfigService,
-  AppConfigServiceMock,
-  AuthModule
-} from '@alfresco/adf-core';
+
 import { ContentModule } from '@alfresco/adf-content-services';
+import { ProcessModule } from '@alfresco/adf-process-services';
+import { CoreModule, TranslateLoaderService, AlfrescoApiService,
+  AlfrescoApiServiceMock, AppConfigService, AppConfigServiceMock } from '@alfresco/adf-core';
+
+import { AppComponent } from './app.component';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -23,9 +19,9 @@ describe('AppComponent', () => {
       imports: [
         RouterTestingModule,
         BrowserAnimationsModule,
-        AuthModule.forRoot({ useHash: true }),
         CoreModule.forRoot(),
         ContentModule.forRoot(),
+        ProcessModule.forRoot(),
         TranslateModule.forRoot({
           loader: { provide: TranslateLoader, useClass: TranslateLoaderService }
         })

@@ -1,23 +1,25 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { TranslationService, AuthenticationService } from '@alfresco/adf-core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  encapsulation: ViewEncapsulation.None,
-  template: `
-    <router-outlet></router-outlet>
-    <router-outlet name="overlay"></router-outlet>
-  `,
-  styles: [
-    `
-      router-outlet[name='overlay'] + * {
-        width: 100%;
-        height: 100%;
-        z-index: 999999;
-        position: absolute;
-        top: 0;
-        right: 0;
-      }
-    `
-  ]
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
-export class AppComponent {}
+export class AppComponent {
+
+  constructor(translationService: TranslationService,
+              private authService: AuthenticationService,
+              private router: Router) {
+    translationService.use('en');
+  }
+
+  logout() {
+    this.authService.logout().subscribe(() => {
+      this.router.navigate(['/login']);
+    });
+  }
+
+}

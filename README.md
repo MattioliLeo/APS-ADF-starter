@@ -1,10 +1,6 @@
-# App Starter Kit
+# ADF/APS Application with Angular CLI
 
-Minimal ready-to-use project template pre-configured with [ADF components](https://github.com/Alfresco/alfresco-ng2-components).
-
-![App Shell](./docs/images/app-shell.png)
-
-See [Online Documentation](https://cautious-doodle-lnyl1n7.pages.github.io/) for more details.
+Minimal ready-to-use Angular CLI project template pre-configured with ADF components.
 
 ## Quick start
 
@@ -13,24 +9,36 @@ npm install
 npm start
 ```
 
-Navigate to `http://localhost:4200/`.
-The app will automatically reload if you change any of the source files.
+## Supported ADF component libraries
 
-Running with a custom backend URL:
+This project has all the existing ADF component libraries already pre-configured.
 
-```sh
-BASE_URL="https://your.alfresco.backend.com" npm start
-```
+The main focus of the project is:
 
-See [Quickstart](https://cautious-doodle-lnyl1n7.pages.github.io/quickstart.html) chapter for more details and options.
+- ADF integration and setup
+- Basic demonstration of working components
+
+## Development server
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+### Proxy settings
+
+The template provides certain proxy settings to allow running web application locally without CORS setup.
+You can find details in the `proxy.conf.js` file.
+
+List of URLs being proxied:
+
+- `/activiti-app` -> `http://0.0.0.0:9999`
+
+## Code scaffolding
+
+Run `ng generate component component-name -m app.module` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
 
 ## Build
 
-Run `npm run build` to build the project.  
-The build artifacts will be stored in the `dist/` directory.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-Use the `npm run build:prod` for a production build.
+## Running unit tests
 
-## Linting
-
-Run `npm run lint` to lint the project.
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
